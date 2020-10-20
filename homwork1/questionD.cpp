@@ -1,32 +1,44 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 //超时
-void fun(int num, int *count)
+long long fun(int num, long long *A, int mod)
 {
-	const int mod = 1e9+7;
-	if(num == 0)
+	// if(num == 0)
+	// {
+	// 	// cout << num << " " << *count << endl;
+	// 	// *count ++;
+	// 	*count = *count + 1 ; 
+	// 	*count = *count % mod;
+	// 	// cout << num << " " << *count << endl;
+	// }
+	cout << num <<endl;
+	if(num >3)
 	{
-		// cout << num << " " << *count << endl;
-		// *count ++;
-		*count = *count + 1 ; 
-		*count = *count % mod;
-		// cout << num << " " << *count << endl;
+		if(A[num] <= 0)
+			A[num] = ((fun(num-1,A,mod)+fun(num-2,A,mod)+fun(num-3,A,mod)) % mod);
+		cout << A[num] << endl;
+		return A[num];
 	}
-	if(num >=3)
+	if(num == 3)
 	{
-		fun(num-1,count);
-		fun(num-2,count);
-		fun(num-3,count);
+		cout << 4 <<endl;
+		return 4;
+		// *count = *count + 4 ; 
+		// *count = *count % mod;
 	}
-	if (num < 3&& num >= 2)
+	if (num == 2)
 	{
-		fun(num-1,count);
-		fun(num-2,count);
+		return 2;
+		// *count = *count + 2 ; 
+		// *count = *count % mod;
 	}
-	if (num==1)
+	if (num == 1)
 	{
-		fun(num-1,count);
+		return 1;
+		// *count = *count + 1 ; 
+		// *count = *count % mod;
 	}
 }
 
@@ -34,8 +46,14 @@ int main(int argc, char const *argv[])
 {
 	int num = 0;
 	cin >> num;
-	int count = 0;
-	fun(num,&count);
-	cout << count;
+	long long *temp;
+	temp =(long long *)malloc(sizeof(long long) * num);
+	for (int i = 0 ; i < num; i++)
+	{
+		temp[i] = -1;
+	}
+	const int mod = 1e9+7;
+	long long count = fun(num,temp, mod);
+	cout << count <<endl;
 	return 0;
 }
