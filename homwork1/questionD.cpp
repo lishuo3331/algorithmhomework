@@ -1,5 +1,6 @@
 #include <iostream>
-#include <iomanip>
+// #include <iomanip>
+#include <stdlib.h>
 
 using namespace std;
 //超时
@@ -13,17 +14,17 @@ long long fun(int num, long long *A, int mod)
 	// 	*count = *count % mod;
 	// 	// cout << num << " " << *count << endl;
 	// }
-	cout << num <<endl;
+	// cout << num <<endl;
 	if(num >3)
 	{
 		if(A[num] <= 0)
 			A[num] = ((fun(num-1,A,mod)+fun(num-2,A,mod)+fun(num-3,A,mod)) % mod);
-		cout << A[num] << endl;
+		// cout << A[num] << endl;
 		return A[num];
 	}
 	if(num == 3)
 	{
-		cout << 4 <<endl;
+		// cout << 4 <<endl;
 		return 4;
 		// *count = *count + 4 ; 
 		// *count = *count % mod;
