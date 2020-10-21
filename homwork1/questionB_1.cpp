@@ -1,11 +1,13 @@
 #include <iostream>
 #include <iomanip>
+#include <stdlib.h>
 using namespace std;
 int n;
-double k,a[100005];
+double k;
+int a[1000];
 bool check(double m)
 {
-    int sum=0;//记录能切出多少个长度为m的绳子
+    int sum=0;
     for(int i=1;i<=n;i++)
     {
         sum+=(int)(a[i]/m);
@@ -16,22 +18,22 @@ bool check(double m)
 }
 int main()
 {
-    cin>>n>>k;
+    cin>>n>>k; 
     for(int i=1;i<=n;i++)
     {
         cin>>a[i];
         a[i]*=100;
     }
-    int l=0,m,r=100000000;
-    while(l<=r)
+    int l=0,m,r=1000000;
+    while(l< r)
     {
         m=(l+r)/2;
         if(m==0)break;
         if(check(m))
-          l=m+1;
+            l=m+1;
         else
             r=m-1;
     }
-    cout<<fixed<<setprecision(2)<<1.0*r/100<<endl;//输出时，先将其*1.0转变成浮点数，后再出去开始扩大的100倍
+    cout<<fixed<<setprecision(2)<<1.0*m/100<<endl;
     return 0;
 }
