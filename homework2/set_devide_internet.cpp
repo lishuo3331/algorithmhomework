@@ -16,7 +16,6 @@ void cul_S()
 			{
 				S[i][j] = S[i-1][j-1] + j*S[i-1][j];
 			}
-
 		}
 	}
 }
@@ -45,8 +44,8 @@ int main(int argc, char const *argv[])
 		for(int i = 1;i <= n;i++)
 		{
 
-			result += S[i][n];
-			cout << "S " << i << " "<< n << " "<< S[i][n] <<endl;
+			result += S[n][i];
+			cout << "S " << n << " "<< i << " "<< S[n][i] <<endl;
 		}
 		cout << result << endl;
 	}
