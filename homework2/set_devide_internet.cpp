@@ -22,11 +22,31 @@ void cul_S()
 }
 int main(int argc, char const *argv[])
 {
+	int n1,n;
 	for(int i = 1;i <= 18;i++)
 	{
 		S[1][i] = 1;
 		S[i][1] = 1;
 	}
 	cul_S();
+	long long result = 0;
+	while((n1 = getchar()) != EOF)
+	{
+		int n2 = getchar();
+		if(n2 != 10)
+		{
+			n = (n1 - 48)*10+n2-48;
+			getchar();	
+		}
+		else
+		{
+			n = n-48;
+		}
+		for(int i = 1;i <= n;i++)
+		{
+			result += S[i][n];
+		}
+		cout << result << endl;
+	}
 	return 0;
 }
