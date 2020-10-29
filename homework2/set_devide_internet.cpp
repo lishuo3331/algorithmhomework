@@ -8,9 +8,9 @@ int S[19][19] = {0};
 
 void cul_S()
 {
-	for(int j = 2;j <= 18;j++)
+	for(int i = 2;i <= 18;i++)
 	{
-		for(int i = 1; i <= 18; i++)
+		for(int j = 2; j <= i; j++)
 		{
 			if (S[i][j] == 0)
 			{
@@ -40,11 +40,13 @@ int main(int argc, char const *argv[])
 		}
 		else
 		{
-			n = n-48;
+			n = n1-48;
 		}
 		for(int i = 1;i <= n;i++)
 		{
+
 			result += S[i][n];
+			cout << "S " << i << " "<< n << " "<< S[i][n] <<endl;
 		}
 		cout << result << endl;
 	}
