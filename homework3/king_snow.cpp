@@ -27,7 +27,7 @@ int main(int argc, char const *argv[])
 		{
 			cin >> h_set[i][j];
 			node_list[index].x = i;
-			node_list[index].y = j;
+			node_list[index].y = j;	
 			node_list[index].height = h_set[i][j];
 			index++;
 		}
