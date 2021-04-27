@@ -43,4 +43,4 @@ int main()
     else cout<<0<<'\n';
     return 0;
 }
-//https://blog.csdn.net/Hall_Of_Fame_/article/details/77816539
+//https://blog.csdn.net/zyq_20030305/article/details/78880573
